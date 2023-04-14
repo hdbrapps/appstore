@@ -24,6 +24,8 @@ function handleSubmit() {
   }
   if (code !== 'cavalodetroia') {
     errorMessage.innerText = 'Código inválido';
+    codeInput.classList.remove('valid');
+    codeInput.classList.add('invalid');
     return;
   }
 
@@ -33,6 +35,8 @@ function handleSubmit() {
   // Limpa as mensagens de erro e sucesso
   errorMessage.innerText = '';
   successMessage.classList.remove('hidden');
+  codeInput.classList.remove('invalid');
+  codeInput.classList.add('valid');
 
   // Armazena a hora em que o usuário acessou a página principal
   localStorage.setItem('lastVisit', new Date().getTime());

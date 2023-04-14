@@ -19,7 +19,8 @@ if (savedCode) {
 function handleSubmit() {
   const code = codeInput.value.trim();
   if (code === '') {
-    errorMessage.innerText = 'Digite o código';
+    errorMessage.innerText = 'Campo vazio';
+    codeInput.classList.add('invalid');
     return;
   }
   if (code !== 'cavalodetroia') {
